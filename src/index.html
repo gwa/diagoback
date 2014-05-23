@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>diagoback</title>
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<style>
+
+	body {
+		padding: 0;
+		margin: 0;
+		font-family: 'Raleway', sans-serif;
+	}
+
+	.diagoback {
+		margin: 30px 0 100px 0;
+	}
+
+	.db-wrap {
+		position: relative;
+		width: 900px;
+		margin: 0 auto;
+		color: #fff;
+		font-size: 18px;
+	}
+
+	.db-svg {
+		top: 0;
+		left: 0;
+	}
+
+	.db-active .db-wrap {
+	}
+
+	.db-wrap .content {
+		padding: 30px 0 100px;
+	}
+
+	.products {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		overflow: hidden;
+		margin: 0 0 -75px 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.products li {
+		float: left;
+		width: 150px;
+		height: 150px;
+		border-radius: 75px;
+		background: rgba(255, 255, 255, 0.5);
+		margin: 0 10px 0 0;
+		padding: 0;
+	}
+
+	.products div {
+		width: 130px;
+		height: 130px;
+		border-radius: 75px;
+		background: #fff;
+		margin: 10px;
+		padding: 0;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="diagoback" data-angle="2" data-fill="#00adae|#008889">
+		<div class="db-wrap">
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<ul class="products">
+				<li><div>&nbsp;</div></li>
+				<li><div>&nbsp;</div></li>
+				<li><div>&nbsp;</div></li>
+			<ul>
+		</div>
+	</div>
+	<div class="diagoback" data-angle="-1" data-fill="#8ad2f2|#5abbea">
+		<div class="db-wrap">
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<ul class="products">
+				<li><div>&nbsp;</div></li>
+				<li><div>&nbsp;</div></li>
+				<li><div>&nbsp;</div></li>
+				<li><div>&nbsp;</div></li>
+			<ul>
+		</div>
+	</div>
+	<div class="diagoback" data-angle="3" data-fill="#ff7830|#ff571c">
+		<div class="db-wrap">
+			<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+			<ul class="products">
+				<li><div>&nbsp;</div></li>
+				<li><div>&nbsp;</div></li>
+			<ul>
+		</div>
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="gwa.Diagoback.js"></script>
+	<script>
+	$('.diagoback').each(function () {
+		new gwa.Diagoback($(this));
+	});
+	</script>
+</body>
+</html>

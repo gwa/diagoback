@@ -115,8 +115,10 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="gwa.Diagoback.js"></script>
 	<script>
-	$('.diagoback').each(function () {
-		new gwa.Diagoback($(this));
+	$(document).ready(function() {
+		$('.diagoback').each(function() {
+			var d = new gwa.Diagoback($(this));
+		});
 	});
 	</script>
 </body>

@@ -57,10 +57,11 @@ window.gwa = window.gwa || {};
 
 		_path,
 
-		_perc = 1;
+		_perc;
 
 		function _init() {
 			jq.addClass('db-active');
+			_perc = 1;
 			_wrap = jq.find('.db-wrap');
 			_fill = jq.attr('data-fill');
 			jq.prepend(_getSVG());
@@ -149,10 +150,8 @@ window.gwa = window.gwa || {};
 
 		function _setPathPoints( width, height, opp, opp2 ) {
 			var points = [],
-				o = opp * _perc,
-				o2 = opp2 * _perc,
-				outery = opp - o,
-				innery = o + o2;
+				outery = opp - (opp * _perc),
+				innery = opp + (opp2 * _perc);
 
 			if (_negative) {
 				points.push('M0,' + outery);
@@ -186,6 +185,24 @@ window.gwa = window.gwa || {};
 		_interface.getAngle = function() {
 			var a = _angle * 180 / Math.PI;
 			return _negative ? a * -1 : a;
+		};
+
+		/**
+		 * Sets the angle percentage
+		 * @method setAngle
+		 * @param {Number} perc between 0 and 1
+		 */
+		_interface.setPerc = function( perc ) {
+			_perc = perc;
+			_redraw();
+		};
+
+		/**
+		 * @method getAngle
+		 * @return {Number} between 0 and 1
+		 */
+		_interface.getPerc = function() {
+			return _perc;
 		};
 
 		_init();

@@ -1,0 +1,14 @@
+{
+  "options": {
+    "banner": "/*! Great White Ark: Minified JS */\n",
+    "report": "min",
+    "sourceMap": true
+  },
+  "dist": {
+    "files" : {
+      "dist/gwa.Diagoback.min.js": [
+        "src/gwa.Diagoback.js"
+      ]
+    }
+  }
+}

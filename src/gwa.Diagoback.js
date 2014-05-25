@@ -26,10 +26,23 @@ window.gwa = window.gwa || {};
 		 */
 		_jq = jq,
 
+		/**
+		 * @property {jQuery} _jq
+		 * @private
+		 */
 		_wrap,
 
+		/**
+		 * Current angle in radians
+		 * @property {Number} _angle
+		 * @private
+		 */
 		_angle,
 
+		/**
+		 * @property {Boolean} _negative
+		 * @private
+		 */
 		_negative = false,
 
 		_fill,
@@ -49,14 +62,16 @@ window.gwa = window.gwa || {};
 		function _init() {
 			jq.addClass('db-active');
 			_wrap = jq.find('.db-wrap');
-			_negative = jq.attr('data-angle') < 0 ? true : false,
-			_angle = Math.abs(jq.attr('data-angle')) * Math.PI / 180;
 			_fill = jq.attr('data-fill');
 			jq.prepend(_getSVG());
-			$(window).on('resize', function(ev) {
+			_addResizeHandler();
+			_interface.setAngle(jq.attr('data-angle'));
+		}
+
+		function _addResizeHandler() {
+			$(window).on('resize', function() {
 				_redraw();
 			});
-			_redraw();
 		}
 
 		function _redraw() {
@@ -64,7 +79,7 @@ window.gwa = window.gwa || {};
 				cwidth = _wrap.width(), // content width
 				cheight = _wrap.height(), // content height
 
-				adj = cwidth + ((owidth - cwidth)/2), // adjacent
+				adj = cwidth + ((owidth - cwidth) / 2), // adjacent
 				opp = Math.tan(_angle) * adj, // opposite = vertical padding necessary
 				opp2 = Math.tan(_angle) * (adj - cwidth), // opposite 2 = other side
 
@@ -139,8 +154,6 @@ window.gwa = window.gwa || {};
 				outery = opp - o,
 				innery = o + o2;
 
-				console.log(o, o2, outery, innery);
-
 			if (_negative) {
 				points.push('M0,' + outery);
 				points.push('L' + width + ',' + innery);
@@ -154,8 +167,26 @@ window.gwa = window.gwa || {};
 			}
 
 			_getPath().setAttribute('d', points.join(' '));
-
 		}
+
+		/**
+		 * @method setAngle
+		 * @param {Number} deg angle in degrees
+		 */
+		_interface.setAngle = function( deg ) {
+			_negative = deg < 0 ? true : false;
+			_angle = Math.abs(deg) * Math.PI / 180;
+			_redraw();
+		};
+
+		/**
+		 * @method getAngle
+		 * @return {Number} current angle in degrees
+		 */
+		_interface.getAngle = function() {
+			var a = _angle * 180 / Math.PI;
+			return _negative ? a * -1 : a;
+		};
 
 		_init();
 

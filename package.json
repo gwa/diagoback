@@ -1,0 +1,21 @@
+{
+  "name": "gwajs",
+  "version": "0.0.2",
+  "description": "gwajs =====",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwa/gwajs.git"
+  },
+  "author": "Timothy Groves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gwa/gwajs/issues"
+  },
+  "homepage": "https://github.com/gwa/gwajs",
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-jscs-checker": "^0.4.4",
+    "grunt-contrib-uglify": "^0.4.0"
+  }
+}
